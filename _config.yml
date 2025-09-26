@@ -1,6 +1,5 @@
 
-logo: /images/pixelandpen-logo.png
-title: Pixel & Pen
+title: /images/pixelandpen-logo.png
 description: Independent reporting & analysis
 url: https://pixelandpen.media
 permalink: /:categories/:year/:month/:day/:title/
