@@ -1,13 +1,14 @@
 
 <header class="site-header">
-  <a href="{{ "/" | relative_url }}">
-    {% if site.logo %}
-      <img src="{{ site.logo | relative_url }}" alt="{{ site.title }}" class="logo">
-    {% else %}
-      <img src="/images/logo.png" alt="{{ site.title }}" class="logo">
-    {% endif %}
+  <a href="{{ "/" | relative_url }}" aria-label="{{ site.title }}">
+    <img
+      src="{{ site.logo | default: '/images/logo.png' | relative_url }}?v={{ site.time | date: '%s' }}"
+      alt="{{ site.title }}"
+      style="height:60px"
+      class="logo"
+    >
   </a>
-  <div class="site-title"><b>Pixel</b> & Pen</div>
+  <!-- Optional: keep the nav on the right -->
   <nav class="site-nav" style="margin-left:auto;">
     {% for item in site.nav %}
       <a href="{{ item.url | relative_url }}">{{ item.title }}</a>
