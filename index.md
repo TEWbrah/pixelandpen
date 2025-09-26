@@ -14,17 +14,6 @@ title: Home
 
 <div id="results"></div>
 
-# Latest Stories
-
-<ul class="post-list">
-{% for post in site.posts limit: 10 %}
-  <li>
-    <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-    <div class="post-meta">{{ post.date | date: "%b %d, %Y" }}</div>
-  </li>
-{% endfor %}
-</ul>
-
 <script>
 (async function(){
   const res = await fetch('{{ "/search.json" | relative_url }}');
