@@ -24,3 +24,52 @@ title: Home
   </li>
 {% endfor %}
 </ul>
+
+<script>
+(async function(){
+  const res = await fetch('{{ "/search.json" | relative_url }}');
+  const data = await res.json();
+
+  const q = document.getElementById('q');
+  const t = document.getElementById('tag-input');
+  const clearBtn = document.getElementById('clear-btn');
+  const out = document.getElementById('results');
+
+  function render(list){
+    if(!list.length){ out.innerHTML = "<p>No matching articles.</p>"; return; }
+    out.innerHTML = `
+      <div class="card">
+        <ul class="post-list">
+          ${list.map(p => `
+            <li>
+              <a href="${p.url}">${p.title}</a>
+              <div class="post-meta">${p.date}${p.tags?.length ? " • " + p.tags.join(", ") : ""}</div>
+              <div style="color:var(--muted); font-size:14px;">${p.excerpt || ""}</div>
+            </li>
+          `).join("")}
+        </ul>
+      </div>`;
+  }
+
+  function search(){
+    const qv = (q.value || "").toLowerCase();
+    const tv = (t.value || "").toLowerCase();
+
+    const filtered = data.filter(p => {
+      const hay = (p.title + " " + p.content).toLowerCase();
+      const textMatch = !qv || hay.includes(qv);
+      const tagMatch  = !tv || (Array.isArray(p.tags) && p.tags.some(tag => (tag||"").toLowerCase().includes(tv)));
+      return textMatch && tagMatch;
+    });
+
+    render(filtered.slice(0, 50));
+  }
+
+  q.addEventListener('input', search);
+  t.addEventListener('input', search);
+  clearBtn.addEventListener('click', () => { q.value=""; t.value=""; search(); });
+
+  // initial render (show all posts)
+  render(data);
+})();
+</script>
