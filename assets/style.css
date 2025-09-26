@@ -49,3 +49,66 @@ footer .footer-inner {
   color: var(--muted);
   font-size: 14px;
 }
+
+/* ================= HEADER ================= */
+.site-header{
+  display:flex;
+  align-items:center;
+  flex-wrap:nowrap;           /* keep logo + nav on one line */
+  gap:16px;
+  padding:8px 24px;
+  border-bottom:1px solid var(--border);
+  position:sticky; top:0;
+  background:rgba(15,17,21,0.95);
+  backdrop-filter:blur(6px);
+  z-index:10;
+}
+
+/* logo link wraps only the image; no extra clickable padding */
+.site-header .brand{ display:inline-flex; align-items:center; line-height:0; }
+.site-header img.logo{ display:block; height:56px; width:auto; }  /* adjust size here */
+
+/* NAV: push right + add spacing between links */
+.site-header nav.site-nav{
+  margin-left:auto;
+  display:flex !important;    /* force flex row */
+  align-items:center;
+  gap:24px;                   /* primary spacing */
+  white-space:nowrap;
+}
+
+/* Fallback spacing if 'gap' ever gets ignored */
+.site-header nav.site-nav a + a{ margin-left:24px !important; }
+
+/* Nice click targets */
+.site-header nav.site-nav a{ padding:4px 6px; }
+
+/* Responsive tweaks */
+@media (max-width: 900px){
+  .site-header img.logo{ height:48px; }
+  .site-header nav.site-nav{ gap:16px; }
+}
+@media (max-width: 700px){
+  .site-header img.logo{ height:42px; }
+  /* uncomment to hide nav on very small screens */
+  /* .site-header nav.site-nav{ display:none; } */
+}
+
+/* Pull content up slightly under the header */
+.container{ padding-top:8px; }
+.content h1:first-child{ margin-top:0; }
+
+/* ================= FOOTER ================= */
+footer{
+  width:100%;
+  border-top:1px solid var(--border);
+  background:transparent;
+}
+footer .footer-inner{
+  max-width:1100px;     /* match .container width */
+  margin:0 auto;        /* center the block */
+  padding:16px 24px;
+  text-align:center;    /* center the text */
+  color:var(--muted);
+  font-size:14px;
+}
