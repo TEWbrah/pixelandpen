@@ -41,3 +41,11 @@ footer { padding: 24px; border-top: 1px solid var(--border); color: var(--muted)
 blockquote { margin: 0; padding: 12px 16px; background: #101521; border-left: 3px solid var(--brand); border-radius: 8px; color: var(--muted); }
 code, pre { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace; }
 pre { background: #101521; padding: 12px; border-radius: 10px; overflow:auto; }
+
+footer .footer-inner {
+  max-width: 1100px;   /* keeps it aligned with your main content width */
+  margin: 0 auto;      /* centers the block */
+  text-align: center;  /* centers the text itself */
+  color: var(--muted);
+  font-size: 14px;
+}
