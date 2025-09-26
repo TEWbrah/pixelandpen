@@ -164,3 +164,15 @@ footer .footer-inner {
 /* Pull content up slightly under the header */
 .container { padding-top: 8px; }
 .content h1:first-child { margin-top: 0; }
+
+/* One-column layout (no sidebar) */
+.container {
+  max-width: 980px;               /* narrower, centered reading width */
+  grid-template-columns: 1fr;     /* single column */
+}
+
+/* Give the main column full width */
+.content.wide .card { margin: 0 auto; }
+
+/* Optional: tighten top space a bit */
+.container { padding-top: 8px; }
