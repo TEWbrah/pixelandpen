@@ -19,7 +19,7 @@ a:hover { text-decoration: underline; }
   .container { grid-template-columns: 3fr 1fr; }
 }
 
-.site-header { display:flex; align-items:center; gap:16px; padding: 4px 16px; border-bottom: 1px solid var(--border); position: sticky; top:0; background: rgba(15,17,21,0.9); backdrop-filter: blur(6px); z-index: 10; }
+.site-header { display:flex; align-items:center; gap:16px; padding: 4px 4px; border-bottom: 1px solid var(--border); position: sticky; top:0; background: rgba(15,17,21,0.9); backdrop-filter: blur(6px); z-index: 10; }
 .site-title { font-weight: 800; letter-spacing: 0.3px; font-size: 22px; }
 .site-title b { color: var(--brand); }
 .site-nav a { margin-right: 16px; color: var(--text); }
