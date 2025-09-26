@@ -5,45 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{{ page.title }} | {{ site.title }}</title>
   <meta name="description" content="{{ page.excerpt | default: site.description | strip_html | strip_newlines | truncate: 160 }}">
-
-  <!-- Stylesheet (cache-busted) -->
   <link rel="stylesheet" href="{{ '/assets/style.css' | relative_url }}?v={{ site.time | date: '%s' }}">
 </head>
 <body>
   {% include header.html %}
 
-<div class="container">
-  <section class="content wide">
-    {% include ad-top.html %}
-    <article class="card">
-      {{ content }}
-    </article>
-  </section>
-</div>
-
-      <div class="card widget">
-        <h3>Latest</h3>
-        <ul class="post-list">
-          {% for post in site.posts limit:6 %}
-            <li>
-              <a href="{{ post.url | relative_url }}">{{ post.title }}</a><br>
-              <span class="post-meta">{{ post.date | date: "%b %d, %Y" }}</span>
-            </li>
-          {% endfor %}
-        </ul>
-      </div>
-
-      <div class="card widget">
-        <h3>Follow</h3>
-        <ul class="post-list">
-          {% for s in site.socials %}
-            <li><a href="{{ s.url }}" target="_blank" rel="noopener">{{ s.name }}</a></li>
-          {% endfor %}
-        </ul>
-      </div>
-
-      {% include ad-sidebar.html %}
-    </aside>
+  <!-- One-column layout: NO SIDEBAR -->
+  <div class="container onecol">
+    <section class="content">
+      {% include ad-top.html %}
+      <article class="card">
+        {{ content }}
+      </article>
+    </section>
   </div>
 
   {% include footer.html %}
