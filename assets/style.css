@@ -84,3 +84,20 @@ pre { background: #101521; padding: 12px; border-radius: 10px; overflow:auto; }
   .site-header img.logo { height: 52px; }
   /* .site-nav { display:none; }  // uncomment if you want to hide nav on phones */
 }
+.site-nav{
+  display: flex !important;
+  align-items: center;
+  margin-left: auto;
+  column-gap: 24px;           /* spacing between links */
+  white-space: nowrap;
+}
+
+/* Fallback spacing even if flex/gap gets overridden */
+.site-nav a + a{
+  margin-left: 24px;
+}
+
+/* Optional small padding around each link so clicks feel nicer */
+.site-nav a{
+  padding: 4px 6px;
+}
