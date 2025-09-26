@@ -1,0 +1,16 @@
+
+<header class="site-header">
+  <a href="{{ "/" | relative_url }}">
+    {% if site.logo %}
+      <img src="{{ site.logo | relative_url }}" alt="{{ site.title }}" class="logo">
+    {% else %}
+      <img src="/images/logo.png" alt="{{ site.title }}" class="logo">
+    {% endif %}
+  </a>
+  <div class="site-title"><b>Pixel</b> & Pen</div>
+  <nav class="site-nav" style="margin-left:auto;">
+    {% for item in site.nav %}
+      <a href="{{ item.url | relative_url }}">{{ item.title }}</a>
+    {% endfor %}
+  </nav>
+</header>

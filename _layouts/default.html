@@ -1,0 +1,46 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ page.title }} | {{ site.title }}</title>
+  <meta name="description" content="{{ page.excerpt | default: site.description | strip_html | strip_newlines | truncate: 160 }}">
+  <link rel="stylesheet" href="{{ '/assets/style.css' | relative_url }}">
+</head>
+<body>
+  {% include header.html %}
+  <div class="container">
+    <section class="content">
+      {% include ad-top.html %}
+      <article class="card">
+        {{ content }}
+      </article>
+    </section>
+    <aside class="sidebar">
+      <div class="card widget">
+        <h3>About</h3>
+        <p>{{ site.description }}</p>
+      </div>
+      <div class="card widget">
+        <h3>Latest</h3>
+        <ul class="post-list">
+          {% for post in site.posts limit:6 %}
+            <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a><br><span class="post-meta">{{ post.date | date: "%b %d, %Y" }}</span></li>
+          {% endfor %}
+        </ul>
+      </div>
+      <div class="card widget">
+        <h3>Follow</h3>
+        <ul class="post-list">
+          {% for s in site.socials %}
+            <li><a href="{{ s.url }}" target="_blank" rel="noopener">{{ s.name }}</a></li>
+          {% endfor %}
+        </ul>
+      </div>
+      {% include ad-sidebar.html %}
+    </aside>
+  </div>
+  {% include footer.html %}
+</body>
+</html>

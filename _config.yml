@@ -1,0 +1,28 @@
+
+title: Pixel & Pen
+description: Independent reporting & analysis
+url: https://pixelandpen.media
+permalink: /:categories/:year/:month/:day/:title/
+markdown: kramdown
+
+# If you later add a remote theme, you can set it here and remove custom layouts.
+# remote_theme:
+
+# Navigation (edit to add/remove items)
+nav:
+  - title: Home
+    url: /
+  - title: About
+    url: /about/
+  - title: Contact
+    url: /contact/
+
+# Socials (optional)
+socials:
+  - name: YouTube
+    url: https://youtube.com/
+  - name: X
+    url: https://x.com/
+
+# Sidebar controls
+show_sidebar_ads: true
