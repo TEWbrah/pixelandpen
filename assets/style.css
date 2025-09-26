@@ -85,3 +85,22 @@ pre { background: #101521; padding: 12px; border-radius: 10px; overflow:auto; }
 .site-nav a{
   padding: 4px 6px;
 }
+
+/* Force nav to be a flex row and space the links */
+.site-header nav.site-nav{
+  display: flex !important;
+  align-items: center;
+  margin-left: auto;
+  gap: 24px;                 /* spacing between links */
+  white-space: nowrap;
+}
+
+/* Fallback spacing in case 'gap' is ignored anywhere */
+.site-header nav.site-nav a + a{
+  margin-left: 24px !important;
+}
+
+/* Optional: slightly bigger click target */
+.site-header nav.site-nav a{
+  padding: 4px 6px;
+}
