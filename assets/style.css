@@ -19,7 +19,7 @@ a:hover { text-decoration: underline; }
   .container { grid-template-columns: 3fr 1fr; }
 }
 
-.site-header { display:inline-flex; align-items:center; line-height: 0; gap:16px; padding: 0; border-bottom: 1px solid var(--border); position: sticky; top:0; background: rgba(15,17,21,0.9); backdrop-filter: blur(6px); z-index: 10; height: auto; }
+.site-header { display:inline-flex; flex-wrap: nowrap; align-items:center; line-height: 0; gap:16px; padding: 0; border-bottom: 1px solid var(--border); position: sticky; top:0; background: rgba(15,17,21,0.9); backdrop-filter: blur(6px); z-index: 10; height: auto; }
 .site-title { font-weight: 800; letter-spacing: 0.3px; font-size: 22px; }
 .site-title b { color: var(--brand); }
 .site-nav a { margin-right: 16px; color: var(--text); }
@@ -39,3 +39,24 @@ footer { padding: 24px; border-top: 1px solid var(--border); color: var(--muted)
 blockquote { margin: 0; padding: 12px 16px; background: #101521; border-left: 3px solid var(--brand); border-radius: 8px; color: var(--muted); }
 code, pre { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace; }
 pre { background: #101521; padding: 12px; border-radius: 10px; overflow:auto; }
+/* Keep header on one line and push nav to the right */
+.site-header { flex-wrap: nowrap; }           /* don't wrap */
+.site-nav {
+  margin-left: auto;                           /* nav to the right */
+  display: flex;
+  align-items: center;
+  gap: 24px;                                   /* space between links */
+  white-space: nowrap;                          /* keep links on one line */
+  flex: 0 0 auto;
+}
+/* Exact logo size */
+.site-header img.logo {
+  display: block;
+  height: 80px;        /* ← set the size you want */
+  width: auto;
+}
+
+/* Compact header + remove top/bottom gap */
+.site-header { padding: 6px 16px; }            /* vertical padding */
+.container { padding-top: 8px; }               /* space under header */
+.content h1:first-child { margin-top: 0; }     /* stop first heading from pushing down */
