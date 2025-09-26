@@ -68,20 +68,23 @@ footer .footer-inner {
 .site-header .brand{ display:inline-flex; align-items:center; line-height:0; }
 .site-header img.logo{ display:block; height:56px; width:auto; }  /* adjust size here */
 
-/* NAV: push right + add spacing between links */
-.site-header nav.site-nav{
-  margin-left:auto;
-  display:flex !important;    /* force flex row */
-  align-items:center;
-  gap:24px;                   /* primary spacing */
-  white-space:nowrap;
+/* NAVIGATION FIX */
+.site-header nav.site-nav {
+  display: flex !important;
+  margin-left: auto !important;
+  align-items: center;
+  gap: 32px !important;      /* increase space between links */
+  white-space: nowrap;
 }
 
-/* Fallback spacing if 'gap' ever gets ignored */
-.site-header nav.site-nav a + a{ margin-left:24px !important; }
+.site-header nav.site-nav a {
+  padding: 6px 10px !important;  /* adds click padding */
+}
 
-/* Nice click targets */
-.site-header nav.site-nav a{ padding:4px 6px; }
+.site-header nav.site-nav a + a {
+  margin-left: 32px !important;  /* fallback spacing */
+}
+
 
 /* Responsive tweaks */
 @media (max-width: 900px){
@@ -98,17 +101,18 @@ footer .footer-inner {
 .container{ padding-top:8px; }
 .content h1:first-child{ margin-top:0; }
 
-/* ================= FOOTER ================= */
-footer{
-  width:100%;
-  border-top:1px solid var(--border);
-  background:transparent;
+/* FOOTER FIX */
+footer {
+  width: 100%;
+  border-top: 1px solid var(--border);
+  background: transparent;
 }
-footer .footer-inner{
-  max-width:1100px;     /* match .container width */
-  margin:0 auto;        /* center the block */
-  padding:16px 24px;
-  text-align:center;    /* center the text */
-  color:var(--muted);
-  font-size:14px;
+
+footer .footer-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  text-align: center !important;   /* force center */
+  padding: 16px;
+  color: var(--muted);
+  font-size: 14px;
 }
