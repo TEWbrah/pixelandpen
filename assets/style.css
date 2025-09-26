@@ -54,7 +54,7 @@ a:hover { text-decoration: underline; }
 
 .site-header img.logo {
   display: block;
-  height: 56px;   /* adjust logo size here */
+  height: 84px;   /* adjust logo size here */
   width: auto;
 }
 
