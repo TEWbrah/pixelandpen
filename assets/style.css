@@ -176,3 +176,6 @@ footer .footer-inner {
 
 /* Optional: tighten top space a bit */
 .container { padding-top: 8px; }
+
+#search-box input::placeholder { color: var(--muted); }
+#results .post-list li { margin: 14px 0; }
