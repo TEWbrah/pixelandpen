@@ -12,19 +12,14 @@
 <body>
   {% include header.html %}
 
-  <div class="container">
-    <section class="content">
-      {% include ad-top.html %}
-      <article class="card">
-        {{ content }}
-      </article>
-    </section>
-
-    <aside class="sidebar">
-      <div class="card widget">
-        <h3>About</h3>
-        <p>{{ site.description }}</p>
-      </div>
+<div class="container">
+  <section class="content wide">
+    {% include ad-top.html %}
+    <article class="card">
+      {{ content }}
+    </article>
+  </section>
+</div>
 
       <div class="card widget">
         <h3>Latest</h3>
