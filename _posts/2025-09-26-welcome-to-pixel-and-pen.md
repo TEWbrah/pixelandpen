@@ -5,5 +5,4 @@ date: 2025-09-26
 tags: [news, site-update]
 ---
 
-This is your first post. Edit or delete it, then add more stories by creating new files in `_posts/` named like:
-
+The purpose of this site is to showcase the developers of the games that we enjoy. I plan to interview developers with questions catered to them and their studio as well as questions related to the gaming industry. Please join me on this journey to give developers a chance to speak their minds and give us, the players, insight into the Gaming Industry.
