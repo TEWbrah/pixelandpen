@@ -179,3 +179,20 @@ footer .footer-inner {
 
 #search-box input::placeholder { color: var(--muted); }
 #results .post-list li { margin: 14px 0; }
+
+/* Basic ad styling */
+.ad { 
+  background: #0f1115; 
+  border: 1px dashed var(--border); 
+  border-radius: 12px; 
+  padding: 12px; 
+  text-align: center; 
+  color: var(--muted); 
+  font-size: 14px;
+  margin: 16px 0;
+}
+
+/* Hide sidebar ads on small screens */
+@media (max-width: 900px){
+  .ad-sidebar { display: none !important; }
+}
