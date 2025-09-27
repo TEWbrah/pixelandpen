@@ -1,15 +1,21 @@
-
 ---
 layout: post
 title: "Welcome to Pixel & Pen"
 date: 2025-09-26
-tags: [news, site-update]   # <— add your tags here
+tags: [news, site-update]
+---
+layout: default
 ---
 
-This is your first post. Edit or delete it, then add more stories by creating new files in **`_posts/`** named like:
-
-```
-YYYY-MM-DD-your-title.md
-```
-
-Write in **Markdown** — it’s just plain text with simple formatting.
+<div class="container onecol">
+  <article class="card">
+    <h1>{{ page.title }}</h1>
+    <div class="post-meta">
+      {{ page.date | date: "%b %d, %Y" }}
+      {% if page.tags and page.tags.size > 0 %} • {{ page.tags | join: ", " }}{% endif %}
+    </div>
+    <div class="post-body">
+      {{ content }}
+    </div>
+  </article>
+</div>
