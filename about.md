@@ -11,5 +11,3 @@ permalink: /about/
 <p style="font-size:18px; margin-top:12px;">
 Our goal is to provide a different view of the gaming culture through the eyes of its creators and exploring the minds that build the worlds we play.
 </p>
-
-</div>
