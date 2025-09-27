@@ -1,5 +1,11 @@
-
-<div class="ad">
-  <!-- Later: paste your AdSense script/snippet here -->
-  Placeholder: Top banner ad
-</div>
+{% if site.adsense_id %}
+  <!-- Google AdSense top banner -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client={{ site.adsense_id }}" crossorigin="anonymous"></script>
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="{{ site.adsense_id }}"
+       data-ad-slot="top_banner_slot"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+{% endif %}
