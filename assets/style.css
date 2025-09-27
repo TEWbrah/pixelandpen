@@ -12,6 +12,7 @@
 html, body {
   margin: 0;
   padding: 0;
+  padding-bottom: 60px;
   background: var(--bg);
   color: var(--text);
   font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif;
@@ -138,10 +139,16 @@ pre {
 
 /* ================= FOOTER ================= */
 footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
   width: 100%;
+  background: rgba(15,17,21,0.95); /* same style as header */
+  backdrop-filter: blur(6px);
   border-top: 1px solid var(--border);
-  background: transparent;
-  padding: 16px 24px;
+  text-align: center;
+  padding: 10px 0;
+  z-index: 10; /* keeps it above other content */
 }
 footer .footer-inner {
   max-width: 1100px;
