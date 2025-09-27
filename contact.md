@@ -8,7 +8,7 @@ permalink: /contact/
   <h2>Contact Pixel &amp; Pen</h2>
   <p>Questions, tips, PR, or interview requests—drop us a line.</p>
 
-  <form id="contact-form"
+<form id="contact-form"
         action="https://formspree.io/f/xvgwzkzg"   <!-- 👈 REPLACE with your Formspree endpoint -->
         method="POST" novalidate>
 
