@@ -9,7 +9,7 @@ permalink: /contact/
   <p>Questions, tips, PR, or interview requests—drop us a line.</p>
 
 <form id="contact-form"
-        action="https://formspree.io/f/xvgwzkzg"   <!-- 👈 REPLACE with your Formspree endpoint -->
+        action="https://formspree.io/f/xvgwzkzg"
         method="POST" novalidate>
 
     <!-- Email (reply-to) -->
